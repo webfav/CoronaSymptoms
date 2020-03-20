@@ -1,0 +1,115 @@
+﻿@model CoronaSymptoms.Models.Symptomer
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Rediger</h1>
+
+<h4>Symptomer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alder" class="control-label"></label>
+                <input asp-for="Alder" class="form-control" />
+                <span asp-validation-for="Alder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Køn" class="control-label"></label>
+                <input asp-for="Køn" class="form-control" />
+                <span asp-validation-for="Køn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Region" class="control-label"></label>
+                <input asp-for="Region" class="form-control" />
+                <span asp-validation-for="Region" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="SymptomerBool" /> @Html.DisplayNameFor(model => model.SymptomerBool)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Nyser" /> @Html.DisplayNameFor(model => model.Nyser)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Hoster" /> @Html.DisplayNameFor(model => model.Hoster)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Feber" /> @Html.DisplayNameFor(model => model.Feber)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Muskelømhed" /> @Html.DisplayNameFor(model => model.Muskelømhed)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Diarre" /> @Html.DisplayNameFor(model => model.Diarre)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Opkast" /> @Html.DisplayNameFor(model => model.Opkast)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Hovedpine" /> @Html.DisplayNameFor(model => model.Hovedpine)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Halsonde" /> @Html.DisplayNameFor(model => model.Halsonde)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Stakåndethed" /> @Html.DisplayNameFor(model => model.Stakåndethed)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Udmattet" /> @Html.DisplayNameFor(model => model.Udmattet)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Sansetab" /> @Html.DisplayNameFor(model => model.Sansetab)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Andet" class="control-label"></label>
+                <input asp-for="Andet" class="form-control" />
+                <span asp-validation-for="Andet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Gå til Liste</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

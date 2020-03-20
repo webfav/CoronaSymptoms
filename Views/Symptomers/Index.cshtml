@@ -1,0 +1,132 @@
+﻿@model IEnumerable<CoronaSymptoms.Models.Symptomer>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Lav ny registrering</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Alder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Køn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Region)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SymptomerBool)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nyser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hoster)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Feber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Muskelømhed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Diarre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Opkast)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hovedpine)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Halsonde)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stakåndethed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Udmattet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sansetab)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Andet)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Køn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Region)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SymptomerBool)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nyser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hoster)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Feber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Muskelømhed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Diarre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Opkast)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hovedpine)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Halsonde)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stakåndethed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Udmattet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sansetab)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Andet)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Rediger</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detaljer</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Slet</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

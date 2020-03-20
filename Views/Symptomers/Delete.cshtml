@@ -1,0 +1,124 @@
+﻿@model CoronaSymptoms.Models.Symptomer
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Slet data-række</h1>
+
+<h3>Er du sikker på at du vil slette?</h3>
+<div>
+    <h4>Symptomer</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Alder)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Alder)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Køn)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Køn)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Region)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Region)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SymptomerBool)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SymptomerBool)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nyser)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nyser)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Hoster)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Hoster)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Feber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Feber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Muskelømhed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Muskelømhed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Diarre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Diarre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Opkast)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Opkast)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Hovedpine)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Hovedpine)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Halsonde)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Halsonde)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Stakåndethed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Stakåndethed)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Udmattet)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Udmattet)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Sansetab)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Sansetab)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Andet)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Andet)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Gå til Liste</a>
+    </form>
+</div>

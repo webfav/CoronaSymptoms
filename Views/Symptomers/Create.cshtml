@@ -1,0 +1,130 @@
+﻿@model CoronaSymptoms.Models.Symptomer
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Registrer dine symptomer her</h1>
+
+<h4>Symptomer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label">Indtast dags dato</label>
+                <input asp-for="Date" class="form-control" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alder" class="control-label"></label>
+                <input asp-for="Alder" class="form-control" />
+                <span asp-validation-for="Alder" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Køn" class="control-label"></label>
+                <select asp-for="Køn" class="form-control">
+                    <option value="0">- Vælg køn -</option>
+                    <option value="Mand">Mand</option>
+                    <option value="Kvinde">Kvinde</option>
+                </select>
+                <span asp-validation-for="Køn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Region" class="control-label"></label>
+                <select asp-for="Region" class="form-control">
+                    <option value="0">- Vælg region -</option>
+                    <option value="1">Region Hovedstaden</option>
+                    <option value="2">Region Nordjylland</option>
+                    <option value="3">Region Midtjylland</option>
+                    <option value="4">Region Syddanmark</option>
+                    <option value="5">Region Sjælland</option>
+                </select>
+                <span asp-validation-for="Region" class="text-danger"></span>
+            </div>
+        <hr />
+        <label rows="2" cols="20">Har du nedenstående symptomer?</label>
+      <div class="form-group form-check">
+          <label class="form-check-label">
+              @Html.DisplayNameFor(model => model.SymptomerBool)
+              @Html.RadioButtonFor(model => model.SymptomerBool, true) Ja
+              @Html.RadioButtonFor(model => model.SymptomerBool, false) Nej
+          </label>
+      </div>
+
+    <div class="form-group form-check">
+        <label class="form-check-label">
+            <input class="form-check-input" asp-for="Nyser" /> @Html.DisplayNameFor(model => model.Nyser)
+        </label>
+    </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Hoster" /> @Html.DisplayNameFor(model => model.Hoster)
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Feber" /> @Html.DisplayNameFor(model => model.Feber)
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Muskelømhed" /> @Html.DisplayNameFor(model => model.Muskelømhed)
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Diarre" /> @Html.DisplayNameFor(model => model.Diarre)
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Opkast" /> @Html.DisplayNameFor(model => model.Opkast)
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Hovedpine" /> @Html.DisplayNameFor(model => model.Hovedpine)
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Halsonde" /> @Html.DisplayNameFor(model => model.Halsonde)
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Stakåndethed" /> @Html.DisplayNameFor(model => model.Stakåndethed)
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Udmattet" /> @Html.DisplayNameFor(model => model.Udmattet)
+            </label>
+        </div>
+        <div class="form-group form-check">
+            <label class="form-check-label">
+                <input class="form-check-input" asp-for="Sansetab" /> @Html.DisplayNameFor(model => model.Sansetab)
+            </label>
+        </div>
+        <div class="form-group">
+            <label asp-for="Andet" class="control-label"></label>
+            <input asp-for="Andet" class="form-control" />
+            <span asp-validation-for="Andet" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Send" class="btn btn-primary" />
+        </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Gå til List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
